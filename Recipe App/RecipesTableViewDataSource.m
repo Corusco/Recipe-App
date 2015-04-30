@@ -16,18 +16,21 @@ NSString static *cellID = @"cellID";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (!cell) {
-        cell=[UITableViewCell new];
+    if (cell != nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     cell.textLabel.text = [RARecipes titleAtIndex:indexPath.row];
-                        
+    cell.detailTextLabel.text = [RARecipes descriptionAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor blueColor];
+    cell.detailTextLabel.textColor = [UIColor grayColor];
+    
+
     [tableView addSubview:cell];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return [RARecipes count];
 }
 
