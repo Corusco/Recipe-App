@@ -16,7 +16,7 @@ NSString static *cellID = @"cellID";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell != nil) {
+    if (cell == nil) {
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     cell.textLabel.text = [RARecipes titleAtIndex:indexPath.row];
@@ -36,7 +36,7 @@ NSString static *cellID = @"cellID";
 
 -(void) registerTableView:(UITableView *)tableView
 {
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    //[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
 }
 
 @end

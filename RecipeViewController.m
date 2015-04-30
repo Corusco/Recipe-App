@@ -8,11 +8,13 @@
 
 #import "RecipeViewController.h"
 #import "RecipesTableViewDataSource.h"
+#import "RARecipeDetailViewController.h"
 
-@interface RecipeViewController ()
+@interface RecipeViewController () <UITableViewDelegate>
 
 @property (strong) UITableView *tableView;
 @property (strong) RecipesTableViewDataSource *dataSource;
+@property (nonatomic, assign) NSInteger recipeIndex;
 
 @end
 
@@ -34,6 +36,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    RARecipeDetailViewController *recipeDetailView = [RARecipeDetailViewController new];
+    NSString *recipeName = 
+    
+    [self.navigationController pushViewController:recipeDetailView animated:YES];
+    
+    
+    
+    
 }
 
 @end
