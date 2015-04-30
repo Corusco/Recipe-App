@@ -9,12 +9,12 @@
 #import "RecipeViewController.h"
 #import "RecipesTableViewDataSource.h"
 #import "RARecipeDetailViewController.h"
+#import "RARecipes.h"
 
 @interface RecipeViewController () <UITableViewDelegate>
 
 @property (strong) UITableView *tableView;
 @property (strong) RecipesTableViewDataSource *dataSource;
-@property (nonatomic, assign) NSInteger recipeIndex;
 
 @end
 
@@ -29,6 +29,7 @@
     self.dataSource = [RecipesTableViewDataSource new];
     [self.dataSource registerTableView:self.tableView];
     self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
     
     
 }
@@ -42,7 +43,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     RARecipeDetailViewController *recipeDetailView = [RARecipeDetailViewController new];
-    
+    recipeDetailView.recipeIndex = indexPath.row;
     [self.navigationController pushViewController:recipeDetailView animated:YES];
     
     

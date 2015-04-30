@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RARecipeDetailViewController : UIViewController
+@property (nonatomic, assign) NSInteger recipeIndex;
 
 @end
