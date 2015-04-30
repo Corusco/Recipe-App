@@ -42,7 +42,6 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     RARecipeDetailViewController *recipeDetailView = [RARecipeDetailViewController new];
-    NSString *recipeName = 
     
     [self.navigationController pushViewController:recipeDetailView animated:YES];
     
