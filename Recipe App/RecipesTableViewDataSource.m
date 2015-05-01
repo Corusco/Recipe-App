@@ -25,7 +25,7 @@ NSString static *cellID = @"cellID";
     cell.detailTextLabel.textColor = [UIColor grayColor];
     
 
-    [tableView addSubview:cell];
+//    [tableView addSubview:cell];
     return cell;
 }
 

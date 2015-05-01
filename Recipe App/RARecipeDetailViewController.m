@@ -62,7 +62,7 @@ static CGFloat margin = 20;
         top += (20 + margin);
     }
     
-    top += (20 + margin);
+    top +=  margin;
     
     UILabel *directionsTitle = [[UILabel alloc] initWithFrame:CGRectMake(margin, top, (self.view.frame.size.width - 2 * margin), 20)];
     directionsTitle.text = @"Directions";
@@ -80,7 +80,7 @@ static CGFloat margin = 20;
         count.font = [UIFont systemFontOfSize:16];
         [scrollView addSubview:count];
         
-        UILabel *direction = [[UILabel alloc] initWithFrame:CGRectMake(margin+30, top, (self.view.frame.size.width - 2 * margin - 40), height)];
+        UILabel *direction = [[UILabel alloc] initWithFrame:CGRectMake(margin + 30, top, (self.view.frame.size.width - 2 * margin - 40), height)];
         direction.numberOfLines = 0;
         direction.text = [RARecipes directionsAtIndex:self.recipeIndex][i];
         
